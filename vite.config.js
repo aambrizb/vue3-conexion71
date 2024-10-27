@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
-      name: 'conexion71',
-      fileName: (format) => `conexion71.${format}.js`
+      name: 'vue3-conexion71',
+      fileName: (format) => `vue3-conexion71.${format}.js`
     },
     rollupOptions: {
       external: ['vue'],
