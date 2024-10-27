@@ -1,20 +1,17 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-4bb54f3e]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-4bb54f3e]{list-style:none;margin:0;padding:10px}.item[data-v-4bb54f3e]{cursor:pointer}.selected[data-v-4bb54f3e]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
-import { ref as i, onMounted as z, watch as D, openBlock as f, createElementBlock as p, Fragment as M, createElementVNode as a, withDirectives as T, vModelText as V, toDisplayString as C, normalizeClass as F, renderList as J, createCommentVNode as w } from "vue";
-const K = (r, y) => {
-  const _ = r.__vccOpts || r;
-  for (const [l, b] of y)
-    _[l] = b;
-  return _;
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-23b8752c]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-23b8752c]{list-style:none;margin:0;padding:10px}.item[data-v-23b8752c]{cursor:pointer}.selected[data-v-23b8752c]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+import { ref as d, onMounted as B, watch as z, openBlock as m, createElementBlock as f, Fragment as M, createElementVNode as o, withDirectives as N, vModelText as T, toDisplayString as C, normalizeClass as V, renderList as D, createCommentVNode as y } from "vue";
+const K = (i, b) => {
+  const p = i.__vccOpts || i;
+  for (const [l, x] of b)
+    p[l] = x;
+  return p;
 }, L = { class: "row" }, U = ["id", "name"], q = { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
   key: 0,
   class: "div-items"
-}, P = { class: "items" }, R = ["onClick", "onMouseover"], j = {
-  key: 0,
-  class: "col-lg-1 col-md-1 col-sm-1 col-xs-12"
-}, A = ["data-app", "data-model"], Q = {
+}, P = { class: "items" }, R = ["onClick", "onMouseover"], j = { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12" }, A = ["data-app", "data-model", "data-form_class"], Q = ["data-form_class"], W = {
   key: 0,
   class: "row"
-}, W = { class: "col-lg-11 col-md-11 col-sm-11 col-xs-12" }, X = { style: { "font-size": "12px", color: "gray" } }, Y = {
+}, X = { class: "col-lg-11 col-md-11 col-sm-11 col-xs-12" }, Y = { style: { "font-size": "12px", color: "gray" } }, Z = {
   __name: "SelectFrame",
   props: [
     "name",
@@ -24,127 +21,133 @@ const K = (r, y) => {
     "label_field",
     "id_field",
     "help_text",
-    "show_actions",
+    "show_create",
+    "show_edit",
+    "form_class",
     "pk"
   ],
   emits: ["changed"],
-  setup(r, { expose: y, emit: _ }) {
-    const l = r, b = _;
-    y({
-      setPK: I
+  setup(i, { expose: b, emit: p }) {
+    const l = i, x = p;
+    b({
+      setPK: O
     });
-    const h = i(null), k = i(null), d = i(null), m = i([]), n = i([]), s = i(null), c = i(null), v = i(!1), u = i(null);
-    z(() => {
+    const h = d(null), k = d(null), c = d(null), _ = d([]), n = d([]), s = d(null), r = d(null), v = d(!1), u = d(null);
+    B(() => {
       l.name === void 0 || l.app === void 0 || l.method === void 0 || l.label_field === void 0 || (l.pk !== void 0 && (u.value = l.pk), document.addEventListener("created_edited", function(e) {
-        e.detail.base_app === h.value && e.detail.base_model === k.value && (removeModal("base", "CreateEdit"), u.value = e.detail.pk, x());
-      }), x());
-    }), D(d, (e, t) => {
-      n.value = m.value.filter((o) => o[l.label_field].includes(d.value)), v.value = !0;
+        e.detail.base_app === h.value && e.detail.base_model === k.value && (removeModal("base", "CreateEdit"), u.value = e.detail.pk, g());
+      }), g());
+    }), z(c, (e, t) => {
+      n.value = _.value.filter((a) => a[l.label_field].includes(c.value)), v.value = !0;
     });
-    function I(e) {
-      u.value = e, x();
+    function O(e) {
+      u.value = e, g();
     }
-    const x = () => {
+    const g = () => {
       HttpRequest(
         "GET",
         l.app,
         l.method
       ).then(function(e) {
-        h.value = e.app, k.value = e.model, m.value = e.data, n.value = m.value, u.value !== void 0 && u.value !== null && setTimeout(function() {
-          let t = m.value.findIndex((o) => String(o.id) === String(u.value));
-          t !== -1 && (c.value = m.value[t], d.value = m.value[t][l.label_field], setTimeout(function() {
+        h.value = e.app, k.value = e.model, _.value = e.data, n.value = _.value, u.value !== void 0 && u.value !== null && setTimeout(function() {
+          let t = _.value.findIndex((a) => String(a.id) === String(u.value));
+          t !== -1 && (r.value = _.value[t], c.value = _.value[t][l.label_field], setTimeout(function() {
             v.value = !1;
           }, 50));
         }, 50);
       });
-    }, N = (e) => {
+    }, F = (e) => {
       if (e.keyCode === 38 || e.keyCode === 40) {
         if (s.value === void 0 || s.value === null) {
-          s.value = 0, g(s.value);
+          s.value = 0, w(s.value);
           return;
         }
-        e.keyCode === 40 && s.value < n.value.length - 1 && (s.value += 1), e.keyCode === 38 && s.value > 0 && (s.value -= 1), g(s.value);
-      } else e.keyCode === 13 ? E(s.value) : e.keyCode === 27 && (v.value = !1);
-    }, E = (e) => {
-      d.value = n.value[e][l.label_field], c.value = n.value[e], u.value = c.value.id, b("changed", c.value), setTimeout(function() {
+        e.keyCode === 40 && s.value < n.value.length - 1 && (s.value += 1), e.keyCode === 38 && s.value > 0 && (s.value -= 1), w(s.value);
+      } else e.keyCode === 13 ? S(s.value) : e.keyCode === 27 && (v.value = !1);
+    }, S = (e) => {
+      c.value = n.value[e][l.label_field], r.value = n.value[e], u.value = r.value.id, x("changed", r.value), setTimeout(function() {
         v.value = !1;
       }, 50);
-    }, g = (e) => {
+    }, w = (e) => {
       s.value = e, !(n.value.length === 0 || n.value[e] === void 0) && (n.value.forEach((t) => t.class_item = null), n.value[e].class_item = "selected");
-    }, $ = () => {
+    }, I = () => {
       showModal("base", "CreateEdit", {
         base_app: h.value,
         base_model: k.value,
-        pk: c.value.id
+        pk: r.value.id
       });
-    }, B = (e) => {
+    }, J = (e) => {
       setTimeout(function() {
-        v.value = !1, (c.value === null || c.value === void 0) && (d.value = null);
+        v.value = !1, (r.value === null || r.value === void 0) && (c.value = null);
       }, 100);
     };
-    return (e, t) => (f(), p(M, null, [
-      a("div", L, [
-        T(a("input", {
+    return (e, t) => (m(), f(M, null, [
+      o("div", L, [
+        N(o("input", {
           id: "id_" + l.name,
           type: "hidden",
           name: l.name,
-          "onUpdate:modelValue": t[0] || (t[0] = (o) => u.value = o)
+          "onUpdate:modelValue": t[0] || (t[0] = (a) => u.value = a)
         }, null, 8, U), [
-          [V, u.value]
+          [T, u.value]
         ]),
-        a("div", q, C(l.label), 1),
-        a("div", {
-          class: F(JSON.parse(r.show_actions) ? "col-lg-9 col-md-9 col-sm-9 col-xs-12" : "col-lg-10 col-md-10 col-sm-10 col-xs-12")
+        o("div", q, C(l.label), 1),
+        o("div", {
+          class: V(JSON.parse(i.show_create) || JSON.parse(i.show_edit) ? "col-lg-9 col-md-9 col-sm-9 col-xs-12" : "col-lg-10 col-md-10 col-sm-10 col-xs-12")
         }, [
-          a("div", G, [
-            T(a("input", {
+          o("div", G, [
+            N(o("input", {
               type: "text",
               class: "form-control",
-              onFocus: t[1] || (t[1] = (o) => v.value = !0),
-              onBlur: B,
-              onKeyup: N,
-              "onUpdate:modelValue": t[2] || (t[2] = (o) => d.value = o)
+              onFocus: t[1] || (t[1] = (a) => v.value = !0),
+              onBlur: J,
+              onKeyup: F,
+              "onUpdate:modelValue": t[2] || (t[2] = (a) => c.value = a)
             }, null, 544), [
-              [V, d.value]
+              [T, c.value]
             ]),
-            v.value ? (f(), p("div", H, [
-              a("ul", P, [
-                (f(!0), p(M, null, J(n.value, (o, S) => (f(), p("li", {
-                  class: F(["item", o.class_item]),
-                  onClick: (O) => {
-                    E(S);
+            v.value ? (m(), f("div", H, [
+              o("ul", P, [
+                (m(!0), f(M, null, D(n.value, (a, E) => (m(), f("li", {
+                  class: V(["item", a.class_item]),
+                  onClick: ($) => {
+                    S(E);
                   },
-                  onMouseover: (O) => {
-                    g(S);
+                  onMouseover: ($) => {
+                    w(E);
                   }
-                }, C(o[l.label_field]), 43, R))), 256))
+                }, C(a[l.label_field]), 43, R))), 256))
               ])
-            ])) : w("", !0)
+            ])) : y("", !0)
           ])
         ], 2),
-        JSON.parse(l.show_actions) ? (f(), p("div", j, [
-          a("span", {
+        o("div", j, [
+          JSON.parse(l.show_create) ? (m(), f("span", {
+            key: 0,
             class: "fa fa-plus-circle text-primary m-1 core_create_edit",
             "data-app": h.value,
             "data-model": k.value,
+            "data-form_class": l.form_class,
             style: { cursor: "pointer" }
-          }, null, 8, A),
-          a("span", {
+          }, null, 8, A)) : y("", !0),
+          JSON.parse(l.show_edit) ? (m(), f("span", {
+            key: 1,
             class: "fa fa-edit text-success m-1 core_create_edit",
-            onClick: t[3] || (t[3] = (o) => $()),
+            "data-form_class": l.form_class,
+            onClick: t[3] || (t[3] = (a) => I()),
             style: { cursor: "pointer" }
-          })
-        ])) : w("", !0)
-      ]),
-      l.help_text ? (f(), p("div", Q, [
-        t[4] || (t[4] = a("div", { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12" }, null, -1)),
-        a("div", W, [
-          a("i", X, C(r.help_text), 1)
+          }, null, 8, Q)) : y("", !0)
         ])
-      ])) : w("", !0)
+      ]),
+      l.help_text ? (m(), f("div", W, [
+        t[4] || (t[4] = o("div", { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12" }, null, -1)),
+        o("div", X, [
+          o("i", Y, C(i.help_text), 1)
+        ])
+      ])) : y("", !0)
     ], 64));
   }
-}, ee = /* @__PURE__ */ K(Y, [["__scopeId", "data-v-4bb54f3e"]]);
+}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-23b8752c"]]);
 export {
-  ee as SelectFrame
+  le as SelectFrame
 };

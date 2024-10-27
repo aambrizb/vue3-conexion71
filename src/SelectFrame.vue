@@ -35,7 +35,7 @@
     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 fw-bold">
       {{ props.label }}
     </div>
-    <div :class="JSON.parse(show_actions) ? 'col-lg-9 col-md-9 col-sm-9 col-xs-12':'col-lg-10 col-md-10 col-sm-10 col-xs-12' ">
+    <div :class="JSON.parse(show_create) || JSON.parse(show_edit) ? 'col-lg-9 col-md-9 col-sm-9 col-xs-12':'col-lg-10 col-md-10 col-sm-10 col-xs-12' ">
       <div style="position:relative;">
         <input type="text" class="form-control"
                @focus="show_div = true"
@@ -52,9 +52,9 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" v-if="JSON.parse(props.show_actions)">
-      <span class="fa fa-plus-circle text-primary m-1 core_create_edit" :data-app="app" :data-model="model" style="cursor:pointer;"></span>
-      <span class="fa fa-edit text-success m-1 core_create_edit" @click="edit()" style="cursor:pointer;"></span>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+      <span class="fa fa-plus-circle text-primary m-1 core_create_edit" v-if="JSON.parse(props.show_create)" :data-app="app" :data-model="model" :data-form_class="props.form_class" style="cursor:pointer;"></span>
+      <span class="fa fa-edit text-success m-1 core_create_edit" v-if="JSON.parse(props.show_edit)" :data-form_class="props.form_class" @click="edit()" style="cursor:pointer;"></span>
     </div>
   </div>
   <div class="row" v-if="props.help_text">
@@ -77,7 +77,9 @@ const props = defineProps([
     'label_field',
     'id_field',
     'help_text',
-    'show_actions',
+    'show_create',
+    'show_edit',
+    'form_class',
     'pk'
 ]);
 
