@@ -1,0 +1,22 @@
+{
+  "name": "conexion71",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ['vue3','component'],
+  "author": "Jesús Alejandro Ambríz Bedolla <aambrizb@gmail.com>",
+  "license": "ISC",
+  "description": "Componentes Vue3 para proyectos personales",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.5.12",
+    "vite": "^5.4.10"
+  }
+}
