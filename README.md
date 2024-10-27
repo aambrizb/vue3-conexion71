@@ -1,6 +1,6 @@
-# Conexion71 Vue Componets
+# Conexion71 Vue Components
 
-A reusable Vue components.
+This component needs a personal environment framework in django and python conexion71 for work. 
 
 ## Installation
 
