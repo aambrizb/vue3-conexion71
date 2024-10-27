@@ -5,4 +5,4 @@ A reusable Vue components.
 ## Installation
 
 ```bash
-npm install vue3-conexion71.tar.gz
+npm install https://github.com/aambrizb/vue3-conexion71/tree/master --save
