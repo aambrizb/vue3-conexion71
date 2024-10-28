@@ -32,7 +32,7 @@
 <template>
   <div class="row">
     <input :id="'id_'+props.name" type="hidden" :name="props.name" v-model="pk" />
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 fw-bold">
+    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold">
       {{ props.label }}
     </div>
     <div :class="JSON.parse(show_create) || JSON.parse(show_edit) ? 'col-lg-9 col-md-9 col-sm-9 col-xs-12':'col-lg-10 col-md-10 col-sm-10 col-xs-12' ">
@@ -52,14 +52,14 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
       <span class="fa fa-plus-circle text-primary m-1 core_create_edit" v-if="JSON.parse(props.show_create)" :data-app="app" :data-model="model" :data-form_class="props.form_class" style="cursor:pointer;"></span>
       <span class="fa fa-edit text-success m-1 core_create_edit" v-if="JSON.parse(props.show_edit)" :data-form_class="props.form_class" @click="edit()" style="cursor:pointer;"></span>
     </div>
   </div>
   <div class="row" v-if="props.help_text">
-    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
-    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+    <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12"></div>
+    <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
       <i style="font-size: 12px;color:gray;">{{ help_text }}</i>
     </div>
   </div>

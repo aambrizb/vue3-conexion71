@@ -1,17 +1,17 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-23b8752c]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-23b8752c]{list-style:none;margin:0;padding:10px}.item[data-v-23b8752c]{cursor:pointer}.selected[data-v-23b8752c]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-cff9e84f]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-cff9e84f]{list-style:none;margin:0;padding:10px}.item[data-v-cff9e84f]{cursor:pointer}.selected[data-v-cff9e84f]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 import { ref as d, onMounted as B, watch as z, openBlock as m, createElementBlock as f, Fragment as M, createElementVNode as o, withDirectives as N, vModelText as T, toDisplayString as C, normalizeClass as V, renderList as D, createCommentVNode as y } from "vue";
-const K = (i, b) => {
+const K = (i, x) => {
   const p = i.__vccOpts || i;
-  for (const [l, x] of b)
-    p[l] = x;
+  for (const [l, b] of x)
+    p[l] = b;
   return p;
-}, L = { class: "row" }, U = ["id", "name"], q = { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
+}, L = { class: "row" }, U = ["id", "name"], q = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
   key: 0,
   class: "div-items"
-}, P = { class: "items" }, R = ["onClick", "onMouseover"], j = { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12" }, A = ["data-app", "data-model", "data-form_class"], Q = ["data-form_class"], W = {
+}, P = { class: "items" }, R = ["onClick", "onMouseover"], j = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, A = ["data-app", "data-model", "data-form_class"], Q = ["data-form_class"], W = {
   key: 0,
   class: "row"
-}, X = { class: "col-lg-11 col-md-11 col-sm-11 col-xs-12" }, Y = { style: { "font-size": "12px", color: "gray" } }, Z = {
+}, X = { class: "col-lg-11 col-md-11 col-sm-12 col-xs-12" }, Y = { style: { "font-size": "12px", color: "gray" } }, Z = {
   __name: "SelectFrame",
   props: [
     "name",
@@ -27,9 +27,9 @@ const K = (i, b) => {
     "pk"
   ],
   emits: ["changed"],
-  setup(i, { expose: b, emit: p }) {
-    const l = i, x = p;
-    b({
+  setup(i, { expose: x, emit: p }) {
+    const l = i, b = p;
+    x({
       setPK: O
     });
     const h = d(null), k = d(null), c = d(null), _ = d([]), n = d([]), s = d(null), r = d(null), v = d(!1), u = d(null);
@@ -65,7 +65,7 @@ const K = (i, b) => {
         e.keyCode === 40 && s.value < n.value.length - 1 && (s.value += 1), e.keyCode === 38 && s.value > 0 && (s.value -= 1), w(s.value);
       } else e.keyCode === 13 ? S(s.value) : e.keyCode === 27 && (v.value = !1);
     }, S = (e) => {
-      c.value = n.value[e][l.label_field], r.value = n.value[e], u.value = r.value.id, x("changed", r.value), setTimeout(function() {
+      c.value = n.value[e][l.label_field], r.value = n.value[e], u.value = r.value.id, b("changed", r.value), setTimeout(function() {
         v.value = !1;
       }, 50);
     }, w = (e) => {
@@ -140,14 +140,14 @@ const K = (i, b) => {
         ])
       ]),
       l.help_text ? (m(), f("div", W, [
-        t[4] || (t[4] = o("div", { class: "col-lg-1 col-md-1 col-sm-1 col-xs-12" }, null, -1)),
+        t[4] || (t[4] = o("div", { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, null, -1)),
         o("div", X, [
           o("i", Y, C(i.help_text), 1)
         ])
       ])) : y("", !0)
     ], 64));
   }
-}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-23b8752c"]]);
+}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-cff9e84f"]]);
 export {
   le as SelectFrame
 };
