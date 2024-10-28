@@ -31,13 +31,13 @@
 </style>
 <template>
   <div class="row">
-    <input :id="'id_'+props.name" type="hidden" :name="props.name" :placeholder="props.placeholder" v-model="pk" />
+    <input :id="'id_'+props.name" type="hidden" :name="props.name" v-model="pk" />
     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold">
       {{ props.label }}
     </div>
     <div :class="JSON.parse(show_create) || JSON.parse(show_edit) ? 'col-lg-9 col-md-9 col-sm-9 col-xs-12':'col-lg-10 col-md-10 col-sm-10 col-xs-12' ">
       <div style="position:relative;">
-        <input type="text" class="form-control"
+        <input type="text" class="form-control" :placeholder="props.placeholder"
                @focus="show_div = true"
                @blur="blur_input"
                @keyup="press"

@@ -1,17 +1,17 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-158856e1]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-158856e1]{list-style:none;margin:0;padding:10px}.item[data-v-158856e1]{cursor:pointer}.selected[data-v-158856e1]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-80cb2e4e]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-80cb2e4e]{list-style:none;margin:0;padding:10px}.item[data-v-80cb2e4e]{cursor:pointer}.selected[data-v-80cb2e4e]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 import { ref as d, onMounted as B, watch as z, openBlock as m, createElementBlock as f, Fragment as M, createElementVNode as o, withDirectives as N, vModelText as T, toDisplayString as C, normalizeClass as V, renderList as D, createCommentVNode as y } from "vue";
-const K = (i, x) => {
+const K = (i, b) => {
   const p = i.__vccOpts || i;
-  for (const [l, b] of x)
-    p[l] = b;
+  for (const [l, x] of b)
+    p[l] = x;
   return p;
-}, L = { class: "row" }, U = ["id", "name", "placeholder"], q = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
+}, L = { class: "row" }, U = ["id", "name"], q = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = ["placeholder"], P = {
   key: 0,
   class: "div-items"
-}, P = { class: "items" }, R = ["onClick", "onMouseover"], j = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, A = ["data-app", "data-model", "data-form_class"], Q = ["data-form_class"], W = {
+}, R = { class: "items" }, j = ["onClick", "onMouseover"], A = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, Q = ["data-app", "data-model", "data-form_class"], W = ["data-form_class"], X = {
   key: 0,
   class: "row"
-}, X = { class: "col-lg-11 col-md-11 col-sm-12 col-xs-12" }, Y = { style: { "font-size": "12px", color: "gray" } }, Z = {
+}, Y = { class: "col-lg-11 col-md-11 col-sm-12 col-xs-12" }, Z = { style: { "font-size": "12px", color: "gray" } }, ee = {
   __name: "SelectFrame",
   props: [
     "name",
@@ -28,9 +28,9 @@ const K = (i, x) => {
     "pk"
   ],
   emits: ["changed"],
-  setup(i, { expose: x, emit: p }) {
-    const l = i, b = p;
-    x({
+  setup(i, { expose: b, emit: p }) {
+    const l = i, x = p;
+    b({
       setPK: O
     });
     const h = d(null), k = d(null), c = d(null), _ = d([]), n = d([]), s = d(null), r = d(null), v = d(!1), u = d(null);
@@ -66,7 +66,7 @@ const K = (i, x) => {
         e.keyCode === 40 && s.value < n.value.length - 1 && (s.value += 1), e.keyCode === 38 && s.value > 0 && (s.value -= 1), w(s.value);
       } else e.keyCode === 13 ? S(s.value) : e.keyCode === 27 && (v.value = !1);
     }, S = (e) => {
-      c.value = n.value[e][l.label_field], r.value = n.value[e], u.value = r.value.id, b("changed", r.value), setTimeout(function() {
+      c.value = n.value[e][l.label_field], r.value = n.value[e], u.value = r.value.id, x("changed", r.value), setTimeout(function() {
         v.value = !1;
       }, 50);
     }, w = (e) => {
@@ -88,7 +88,6 @@ const K = (i, x) => {
           id: "id_" + l.name,
           type: "hidden",
           name: l.name,
-          placeholder: l.placeholder,
           "onUpdate:modelValue": t[0] || (t[0] = (a) => u.value = a)
         }, null, 8, U), [
           [T, u.value]
@@ -101,15 +100,16 @@ const K = (i, x) => {
             N(o("input", {
               type: "text",
               class: "form-control",
+              placeholder: l.placeholder,
               onFocus: t[1] || (t[1] = (a) => v.value = !0),
               onBlur: J,
               onKeyup: F,
               "onUpdate:modelValue": t[2] || (t[2] = (a) => c.value = a)
-            }, null, 544), [
+            }, null, 40, H), [
               [T, c.value]
             ]),
-            v.value ? (m(), f("div", H, [
-              o("ul", P, [
+            v.value ? (m(), f("div", P, [
+              o("ul", R, [
                 (m(!0), f(M, null, D(n.value, (a, E) => (m(), f("li", {
                   class: V(["item", a.class_item]),
                   onClick: ($) => {
@@ -118,12 +118,12 @@ const K = (i, x) => {
                   onMouseover: ($) => {
                     w(E);
                   }
-                }, C(a[l.label_field]), 43, R))), 256))
+                }, C(a[l.label_field]), 43, j))), 256))
               ])
             ])) : y("", !0)
           ])
         ], 2),
-        o("div", j, [
+        o("div", A, [
           JSON.parse(l.show_create) ? (m(), f("span", {
             key: 0,
             class: "fa fa-plus-circle text-primary m-1 core_create_edit",
@@ -131,25 +131,25 @@ const K = (i, x) => {
             "data-model": k.value,
             "data-form_class": l.form_class,
             style: { cursor: "pointer" }
-          }, null, 8, A)) : y("", !0),
+          }, null, 8, Q)) : y("", !0),
           JSON.parse(l.show_edit) ? (m(), f("span", {
             key: 1,
             class: "fa fa-edit text-success m-1 core_create_edit",
             "data-form_class": l.form_class,
             onClick: t[3] || (t[3] = (a) => I()),
             style: { cursor: "pointer" }
-          }, null, 8, Q)) : y("", !0)
+          }, null, 8, W)) : y("", !0)
         ])
       ]),
-      l.help_text ? (m(), f("div", W, [
+      l.help_text ? (m(), f("div", X, [
         t[4] || (t[4] = o("div", { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, null, -1)),
-        o("div", X, [
-          o("i", Y, C(i.help_text), 1)
+        o("div", Y, [
+          o("i", Z, C(i.help_text), 1)
         ])
       ])) : y("", !0)
     ], 64));
   }
-}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-158856e1"]]);
+}, te = /* @__PURE__ */ K(ee, [["__scopeId", "data-v-80cb2e4e"]]);
 export {
-  le as SelectFrame
+  te as SelectFrame
 };
