@@ -31,7 +31,7 @@
 </style>
 <template>
   <div class="row">
-    <input :id="'id_'+props.name" type="hidden" :name="props.name" v-model="pk" />
+    <input :id="'id_'+props.name" type="hidden" :name="props.name" :placeholder="props.placeholder" v-model="pk" />
     <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold">
       {{ props.label }}
     </div>
@@ -72,6 +72,7 @@ import { ref, onMounted, watch } from 'vue'
 const props = defineProps([
     'name',
     'label',
+    'placeholder',
     'app',
     'method',
     'label_field',

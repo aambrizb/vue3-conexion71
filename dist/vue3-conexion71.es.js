@@ -1,11 +1,11 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-cff9e84f]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-cff9e84f]{list-style:none;margin:0;padding:10px}.item[data-v-cff9e84f]{cursor:pointer}.selected[data-v-cff9e84f]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".div-items[data-v-158856e1]{max-height:150px;overflow:auto;position:absolute;top:35px;left:0;background-color:#fff;border:solid 1px #c4c4c4;border-radius:10px;z-index:999999;width:100%}.items[data-v-158856e1]{list-style:none;margin:0;padding:10px}.item[data-v-158856e1]{cursor:pointer}.selected[data-v-158856e1]{background-color:#f2f2f2;font-weight:700}")),document.head.appendChild(e)}}catch(t){console.error("vite-plugin-css-injected-by-js",t)}})();
 import { ref as d, onMounted as B, watch as z, openBlock as m, createElementBlock as f, Fragment as M, createElementVNode as o, withDirectives as N, vModelText as T, toDisplayString as C, normalizeClass as V, renderList as D, createCommentVNode as y } from "vue";
 const K = (i, x) => {
   const p = i.__vccOpts || i;
   for (const [l, b] of x)
     p[l] = b;
   return p;
-}, L = { class: "row" }, U = ["id", "name"], q = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
+}, L = { class: "row" }, U = ["id", "name", "placeholder"], q = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12 fw-bold" }, G = { style: { position: "relative" } }, H = {
   key: 0,
   class: "div-items"
 }, P = { class: "items" }, R = ["onClick", "onMouseover"], j = { class: "col-lg-1 col-md-1 col-sm-12 col-xs-12" }, A = ["data-app", "data-model", "data-form_class"], Q = ["data-form_class"], W = {
@@ -16,6 +16,7 @@ const K = (i, x) => {
   props: [
     "name",
     "label",
+    "placeholder",
     "app",
     "method",
     "label_field",
@@ -87,6 +88,7 @@ const K = (i, x) => {
           id: "id_" + l.name,
           type: "hidden",
           name: l.name,
+          placeholder: l.placeholder,
           "onUpdate:modelValue": t[0] || (t[0] = (a) => u.value = a)
         }, null, 8, U), [
           [T, u.value]
@@ -147,7 +149,7 @@ const K = (i, x) => {
       ])) : y("", !0)
     ], 64));
   }
-}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-cff9e84f"]]);
+}, le = /* @__PURE__ */ K(Z, [["__scopeId", "data-v-158856e1"]]);
 export {
   le as SelectFrame
 };
